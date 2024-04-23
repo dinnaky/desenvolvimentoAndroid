@@ -2,6 +2,5 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="corButton">#4EB6C3</color>
-    <color name="corDark">#66ACB3</color>
+    <color name="colorButton">#28747E</color>
 </resources>
