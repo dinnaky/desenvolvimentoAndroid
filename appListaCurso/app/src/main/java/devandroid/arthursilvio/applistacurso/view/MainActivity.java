@@ -10,10 +10,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.arthursilvio.applistacurso.R;
 import devandroid.arthursilvio.applistacurso.model.Person;
+import devandroid.arthursilvio.applistacurso.model.Products;
 
 public class MainActivity extends AppCompatActivity {
 
+    Products products;
+
     Person person;
+    Person outerPerson;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         person = new Person();
+        person.setFirstName("Arthur");
+        person.setSurname("Vitor");
+        person.setCurse("A.D.S");
+        person.setTell("(44)99999-9999");
+
+        outerPerson = new Person();
+        outerPerson.setFirstName("Lucas");
+        outerPerson.setSurname("Wills");
+        outerPerson.setCurse("Agro");
+        outerPerson.setTell("(11)11111-1111");
+
+        products = new Products();
+        products.setNameProduct("Maça");
+        products.setPrice(14);
+        products.setBrand("Natureza");
+
     }
 }
