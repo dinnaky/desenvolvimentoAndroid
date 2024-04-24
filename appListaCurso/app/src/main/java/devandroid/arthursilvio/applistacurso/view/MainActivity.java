@@ -13,9 +13,12 @@ import devandroid.arthursilvio.applistacurso.model.Person;
 
 public class MainActivity extends AppCompatActivity {
 
-    String personalData;
+ //Criando os objetos
+
+//    String personalData;
+//    Person outerPerson;
     Person person;
-    Person outerPerson;
+
 
 
     @Override
@@ -37,27 +40,26 @@ public class MainActivity extends AppCompatActivity {
         person.setCurse("A.D.S");
         person.setTell("(44)99999-9999");
 
-        outerPerson = new Person();
-        outerPerson.setFirstName("Lucas");
-        outerPerson.setSurname("Wills");
-        outerPerson.setCurse("Agro");
-        outerPerson.setTell("(11)11111-1111");
+//       outerPerson = new Person();
+//        outerPerson.setFirstName("Lucas");
+//        outerPerson.setSurname("Wills");
+//        outerPerson.setCurse("Agro");
+//        outerPerson.setTell("(11)11111-1111");
+//
+//        // MÉTODO GETTS (concatenação)
+//
+//        personalData = "Primeiro Nome: ";
+//        personalData += person.getFirstName();
+//        personalData += ".";
+//        personalData += " Sobrenome: ";
+//        personalData += person.getSurname();
+//        personalData += ".";
+//        personalData += " Curso: ";
+//        personalData += person.getCurse();
+//        personalData += ".";
+//        personalData += " Telefone: ";
+//        personalData += person.getTell();
+//        personalData += ".";
 
-        // MÉTODO GETTS (concatenação)
-
-        personalData = "Primeiro Nome: ";
-        personalData += person.getFirstName();
-        personalData += ".";
-        personalData += " Sobrenome: ";
-        personalData += person.getSurname();
-        personalData += ".";
-        personalData += " Curso: ";
-        personalData += person.getCurse();
-        personalData += ".";
-        personalData += " Telefone: ";
-        personalData += person.getTell();
-        personalData += ".";
-
-        int parada = 0;
     }
 }
