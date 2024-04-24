@@ -3,5 +3,6 @@
     <style name="Base.Theme.AppListaCurso" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/corDark</item>
+        <item name="colorOnPrimary">@color/text_color</item>
     </style>
 </resources>

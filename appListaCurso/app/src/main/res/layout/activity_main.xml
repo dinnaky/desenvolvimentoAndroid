@@ -11,7 +11,7 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txt_titulo"
+        android:text="@string/txt_title"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -26,95 +26,100 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
-        android:hint="@string/txt_hint_edit_primeiro_nome"
+        android:hint="@string/txt_hint_edit_first_name"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#795548"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:ignore="VisualLintTextFieldSize"
+        tools:layout_editor_absoluteX="17dp" />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/txt_hint_edit_sobrenome"
+        android:hint="@string/txt_hint_edit_surname"
+        android:textColorHint="#795548"
+        android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:textColorHint="#795548"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/txt_hint_edit_primeiro_curso"
+        android:hint="@string/txt_hint_edit_curse"
+        android:importantForAutofill="no"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/editText1"
+        tools:layout_editor_absoluteX="32dp"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/txt_hint_edit_telefone"
+        android:hint="@string/txt_hint_edit_tell"
+        android:textColorHint="#795548"
+        android:importantForAutofill="no"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="44dp"
-        android:text="@string/txt_button_limpar"
-        android:textColorLink="@color/corBotao"
+        android:layout_marginBottom="32dp"
+        android:background="@color/corButton"
+        android:text="@string/txt_button_clean"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1"
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:text="@string/txt_button_salvar"
-        android:textColorLink="@color/corButton"
+        android:layout_marginBottom="32dp"
+        android:background="@color/corButton"
+        android:text="@string/txt_button_save"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/txt_button_finalizar"
-        android:textColorLink="@color/corBotao"
+        android:text="@string/txt_button_finish"
+        android:background="@color/corButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.386" />
+        tools:ignore="VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
