@@ -1,4 +1,9 @@
 package devandroid.arthursilvio.applistacurso.model;
 
-public class curso {
+public class Person {
+
+    public Person(){
+
+    }
+
 }
