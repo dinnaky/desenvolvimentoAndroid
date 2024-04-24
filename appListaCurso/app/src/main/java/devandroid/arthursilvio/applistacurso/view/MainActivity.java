@@ -10,12 +10,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.arthursilvio.applistacurso.R;
 import devandroid.arthursilvio.applistacurso.model.Person;
-import devandroid.arthursilvio.applistacurso.model.Products;
 
 public class MainActivity extends AppCompatActivity {
 
-    Products products;
-
+    String personalData;
     Person person;
     Person outerPerson;
 
@@ -31,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //MÉTODO SETTS
+
         person = new Person();
         person.setFirstName("Arthur");
         person.setSurname("Vitor");
@@ -43,10 +43,21 @@ public class MainActivity extends AppCompatActivity {
         outerPerson.setCurse("Agro");
         outerPerson.setTell("(11)11111-1111");
 
-        products = new Products();
-        products.setNameProduct("Maça");
-        products.setPrice(14);
-        products.setBrand("Natureza");
+        // MÉTODO GETTS (concatenação)
 
+        personalData = "Primeiro Nome: ";
+        personalData += person.getFirstName();
+        personalData += ".";
+        personalData += " Sobrenome: ";
+        personalData += person.getSurname();
+        personalData += ".";
+        personalData += " Curso: ";
+        personalData += person.getCurse();
+        personalData += ".";
+        personalData += " Telefone: ";
+        personalData += person.getTell();
+        personalData += ".";
+
+        int parada = 0;
     }
 }
