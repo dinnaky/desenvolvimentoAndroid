@@ -1,6 +1,7 @@
 package devandroid.arthursilvio.applistacurso.view;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,13 +15,9 @@ import devandroid.arthursilvio.applistacurso.model.Person;
 public class MainActivity extends AppCompatActivity {
 
  //Criando os objetos
-
 //    String personalData;
-//    Person outerPerson;
+    Person outerPerson;
     Person person;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,26 +37,32 @@ public class MainActivity extends AppCompatActivity {
         person.setCurse("A.D.S");
         person.setTell("(44)99999-9999");
 
-//       outerPerson = new Person();
-//        outerPerson.setFirstName("Lucas");
-//        outerPerson.setSurname("Wills");
-//        outerPerson.setCurse("Agro");
-//        outerPerson.setTell("(11)11111-1111");
-//
-//        // MÉTODO GETTS (concatenação)
-//
-//        personalData = "Primeiro Nome: ";
-//        personalData += person.getFirstName();
-//        personalData += ".";
-//        personalData += " Sobrenome: ";
-//        personalData += person.getSurname();
-//        personalData += ".";
-//        personalData += " Curso: ";
-//        personalData += person.getCurse();
-//        personalData += ".";
-//        personalData += " Telefone: ";
-//        personalData += person.getTell();
-//        personalData += ".";
+       outerPerson = new Person();
+        outerPerson.setFirstName("Lucas");
+        outerPerson.setSurname("Wills");
+        outerPerson.setCurse("Agro");
+        outerPerson.setTell("(11)11111-1111");
+
+        // MÉTODO GETTS (concatenação)
+        /*
+
+
+        personalData = "Primeiro Nome: ";
+        personalData += person.getFirstName();
+        personalData += ".";
+        personalData += " Sobrenome: ";
+        personalData += person.getSurname();
+        personalData += ".";
+        personalData += " Curso: ";
+        personalData += person.getCurse();
+        personalData += ".";
+        personalData += " Telefone: ";
+        personalData += person.getTell();
+        personalData += ".";
+*/
+
+        Log.i("POOAndroid", "Dados adquiridos: " +person.toString());
+        Log.i("POOAndroid", "Dados adquiridos: " +outerPerson.toString());
 
     }
 }

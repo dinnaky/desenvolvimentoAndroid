@@ -42,11 +42,11 @@ public class Person {
     // herança - polimorfismo (varias formas)
     @Override
     public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", surname='" + surname + '\'' +
-                ", curse='" + curse + '\'' +
-                ", tell='" + tell + '\'' +
+        return "Esses são os dados do candidato =" +
+                " Primeiro Nome: '" + firstName + '\'' +
+                ", Sobrenome: '" + surname + '\'' +
+                ", Curso: '" + curse + '\'' +
+                ", Telefone: '" + tell + '\'' +
                 '}';
     }
 }
