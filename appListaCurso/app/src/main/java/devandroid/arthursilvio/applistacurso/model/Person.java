@@ -50,7 +50,7 @@ public class Person {
     // herança - polimorfismo (varias formas)
     @Override
     public String toString() {
-        return "Esses são os dados do candidato =" +
+        return "Seus dados:" +
                 " Primeiro Nome: '" + firstName + '\'' +
                 ", Sobrenome: '" + surname + '\'' +
                 ", Curso: '" + curse + '\'' +

@@ -2,8 +2,10 @@ package devandroid.arthursilvio.applistacurso.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,17 +44,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //MÉTODO SETTS
-        person = new Person();
-        person.setFirstName("Arthur");
-        person.setSurname("Vitor");
-        person.setCurse("A.D.S");
-        person.setTell("(44)99999-9999");
 
+        person = new Person();
+//        person.setFirstName("Arthur");
+//        person.setSurname("Vitor");
+//        person.setCurse("A.D.S");
+//        person.setTell("(44)99999-9999");
         outerPerson = new Person();
         outerPerson.setFirstName("Lucas");
         outerPerson.setSurname("Wills");
         outerPerson.setCurse("Agro");
         outerPerson.setTell("(11)11111-1111");
+
 
 // ASSOCIAR JAVA AO LAYOUT USANDO FINDVIEWBYID
         editFirstName = findViewById(R.id.editFirstName);
@@ -68,7 +71,41 @@ public class MainActivity extends AppCompatActivity {
         editSurname.setText(outerPerson.getSurname());
         editCurse.setText(outerPerson.getCurse());
         editTell.setText(outerPerson.getTell());
-
+// AQUI ADICIONEI UM LISTENER DE CLICK NO BOTÃO LIMPAR.
+        buttonClean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editFirstName.setText("");
+                editSurname.setText("");
+                editCurse.setText("");
+                editTell.setText("");
+            }
+        });
+// AQUI ADICIONEI UM LISTENER DE CLICK NO BOTÃO FINALIZAR.
+        buttonFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TOAST = EXIBI UMA MENSAGEM NA TELA
+                Toast.makeText(MainActivity.this, "Sucesso ao mandar as informações", Toast.LENGTH_LONG).show();
+                //SHOTDOWN NO APLICATIVO
+                finish();
+            }
+        });
+// AQUI ADICIONEI UM LISTENER DE CLICK NO BOTÃO SALVAR.
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                person.setFirstName(editFirstName.getText().toString());
+                person.setSurname(editSurname.getText().toString());
+                person.setCurse(editCurse.getText().toString());
+                person.setTell(editTell.getText().toString());
+                Toast.makeText(MainActivity.this, "Salvo com sucesso " +person.toString(), Toast.LENGTH_LONG).show();
+                editFirstName.setText("");
+                editSurname.setText("");
+                editCurse.setText("");
+                editTell.setText("");
+            }
+        });
 
 // Maneira mais fácil de concatenar
 /*        Log.i("POOAndroid", "Dados adquiridos: " +person.toString());
