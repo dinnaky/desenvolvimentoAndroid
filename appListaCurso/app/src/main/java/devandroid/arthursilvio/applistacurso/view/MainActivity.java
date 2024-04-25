@@ -16,7 +16,7 @@ import devandroid.arthursilvio.applistacurso.model.Person;
 
 public class MainActivity extends AppCompatActivity {
 
- //Declarando Classes
+    //Declarando Classes
     EditText editFirstName;
     EditText editSurname;
     EditText editCurse;
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     Person outerPerson;
     Person person;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         person.setCurse("A.D.S");
         person.setTell("(44)99999-9999");
 
-       outerPerson = new Person();
+        outerPerson = new Person();
         outerPerson.setFirstName("Lucas");
         outerPerson.setSurname("Wills");
         outerPerson.setCurse("Agro");
@@ -67,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
         editSurname.setText(outerPerson.getSurname());
         editCurse.setText(outerPerson.getCurse());
         editTell.setText(outerPerson.getTell());
-
-
 
 
 // Maneira mais fácil de concatenar
