@@ -2,6 +2,8 @@ package devandroid.arthursilvio.applistacurso.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +16,17 @@ import devandroid.arthursilvio.applistacurso.model.Person;
 
 public class MainActivity extends AppCompatActivity {
 
- //Criando os objetos
-//    String personalData;
+ //Declarando Classes
+    EditText editFirstName;
+    EditText editSurname;
+    EditText editCurse;
+    EditText editTell;
+
+    Button buttonClean;
+    Button buttonSave;
+    Button buttonFinish;
+
+
     Person outerPerson;
     Person person;
     @Override
@@ -30,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //MÉTODO SETTS
-
         person = new Person();
         person.setFirstName("Arthur");
         person.setSurname("Vitor");
@@ -43,9 +53,30 @@ public class MainActivity extends AppCompatActivity {
         outerPerson.setCurse("Agro");
         outerPerson.setTell("(11)11111-1111");
 
-        // MÉTODO GETTS (concatenação)
-        /*
+// ASSOCIAR JAVA AO LAYOUT USANDO FINDVIEWBYID
+        editFirstName = findViewById(R.id.editFirstName);
+        editSurname = findViewById(R.id.editSurname);
+        editCurse = findViewById(R.id.editCurse);
+        editTell = findViewById(R.id.editTell);
 
+        buttonClean = findViewById(R.id.buttonClean);
+        buttonSave = findViewById(R.id.buttonSave);
+        buttonFinish = findViewById(R.id.buttonFinish);
+
+        editFirstName.setText(outerPerson.getFirstName());
+        editSurname.setText(outerPerson.getSurname());
+        editCurse.setText(outerPerson.getCurse());
+        editTell.setText(outerPerson.getTell());
+
+
+
+
+// Maneira mais fácil de concatenar
+/*        Log.i("POOAndroid", "Dados adquiridos: " +person.toString());
+        Log.i("POOAndroid", "Dados adquiridos: " +outerPerson.toString());*/
+// MÉTODO GETTS (concatenação)
+/*
+        String personalData;
 
         personalData = "Primeiro Nome: ";
         personalData += person.getFirstName();
@@ -60,9 +91,6 @@ public class MainActivity extends AppCompatActivity {
         personalData += person.getTell();
         personalData += ".";
 */
-
-        Log.i("POOAndroid", "Dados adquiridos: " +person.toString());
-        Log.i("POOAndroid", "Dados adquiridos: " +outerPerson.toString());
 
     }
 }
