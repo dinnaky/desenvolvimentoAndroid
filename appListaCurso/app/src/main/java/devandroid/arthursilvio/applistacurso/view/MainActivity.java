@@ -96,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
             person.setCurse(editCurse.getText().toString());
             person.setTell(editTell.getText().toString());
             Toast.makeText(MainActivity.this, "Salvo com sucesso " +person.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Salvo com sucesso " + person.toString(), Toast.LENGTH_LONG).show();
             editFirstName.setText("");
             editSurname.setText("");
             editCurse.setText("");
             editTell.setText("");
-
             controller.save(person);
         });
 

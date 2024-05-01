@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <TextView android:id="@+id/txtTitle"
+    <TextView
+        android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txt_title"
@@ -19,7 +20,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.053" />
-    <EditText android:id="@+id/editFirstName"
+
+    <EditText
+        android:id="@+id/editFirstName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="16dp"
@@ -32,48 +35,56 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTitle"
         tools:ignore="VisualLintTextFieldSize"
         tools:layout_editor_absoluteX="17dp" />
-    <EditText android:id="@+id/editSurname"
+
+    <EditText
+        android:id="@+id/editSurname"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/txt_hint_edit_surname"
-        android:textColorHint="#795548"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#795548"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editFirstName"
         tools:ignore="VisualLintTextFieldSize" />
-    <EditText android:id="@+id/editCurse"
+
+    <EditText
+        android:id="@+id/editCurse"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:textColorHint="#795548"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/txt_hint_edit_curse"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#795548"
         app:layout_constraintTop_toBottomOf="@+id/editSurname"
-        tools:layout_editor_absoluteX="32dp"
-        tools:ignore="VisualLintTextFieldSize" />
-    <EditText android:id="@+id/editTell"
+        tools:ignore="VisualLintTextFieldSize"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <EditText
+        android:id="@+id/editTell"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/txt_hint_edit_tell"
-        android:textColorHint="#795548"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textColorHint="#795548"
         app:layout_constraintTop_toBottomOf="@+id/editCurse"
-        tools:layout_editor_absoluteX="16dp"
-        tools:ignore="VisualLintTextFieldSize" />
-    <Button android:id="@+id/buttonClean"
+        tools:ignore="VisualLintTextFieldSize"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/buttonClean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -84,7 +95,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTell"
         app:layout_constraintVertical_bias="1.0" />
-    <Button android:id="@+id/buttonSave"
+
+    <Button
+        android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -96,12 +109,14 @@
         app:layout_constraintStart_toEndOf="@+id/buttonClean"
         app:layout_constraintTop_toBottomOf="@+id/editTell"
         app:layout_constraintVertical_bias="1.0" />
-    <Button android:id="@+id/buttonFinish"
+
+    <Button
+        android:id="@+id/buttonFinish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/txt_button_finish"
         android:background="@color/corButton"
+        android:text="@string/txt_button_finish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTell"

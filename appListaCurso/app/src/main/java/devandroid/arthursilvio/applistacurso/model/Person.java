@@ -48,13 +48,12 @@ public class Person {
 
     //to string - Para Textos (OBJETO PAI)
     // herança - polimorfismo (varias formas)
-    @Override
-    public String toString() {
-        return "Seus dados:" +
-                " Primeiro Nome: '" + firstName + '\'' +
-                ", Sobrenome: '" + surname + '\'' +
-                ", Curso: '" + curse + '\'' +
-                ", Telefone: '" + tell + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Seus dados:" +
+//                " Primeiro Nome: '" + firstName + '\'' +
+//                ", Sobrenome: '" + surname + '\'' +
+//                ", Curso: '" + curse + '\'' +
+//                ", Telefone: '" + tell + '\'' +
+//                '}';
 }
