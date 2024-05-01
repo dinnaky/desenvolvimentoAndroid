@@ -12,11 +12,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.arthursilvio.applistacurso.R;
+import devandroid.arthursilvio.applistacurso.controller.PersonController;
 import devandroid.arthursilvio.applistacurso.model.Person;
 
 public class MainActivity extends AppCompatActivity {
 
     //Declarando Classes
+
+    PersonController controller;
+
     EditText editFirstName;
     EditText editSurname;
     EditText editCurse;
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        controller = new PersonController();
 
         //MÉTODO SETTS
 
@@ -89,11 +95,13 @@ public class MainActivity extends AppCompatActivity {
             person.setSurname(editSurname.getText().toString());
             person.setCurse(editCurse.getText().toString());
             person.setTell(editTell.getText().toString());
+            Toast.makeText(MainActivity.this, "Salvo com sucesso " +person.toString(), Toast.LENGTH_LONG).show();
             Toast.makeText(MainActivity.this, "Salvo com sucesso " + person.toString(), Toast.LENGTH_LONG).show();
             editFirstName.setText("");
             editSurname.setText("");
             editCurse.setText("");
             editTell.setText("");
+            controller.save(person);
         });
 
 // Maneira mais fácil de concatenar
