@@ -1,5 +1,6 @@
 package devandroid.arthursilvio.applistacurso.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,9 @@ import devandroid.arthursilvio.applistacurso.model.Person;
 public class MainActivity extends AppCompatActivity {
 
     //Declarando Classes
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_listavip";
 
     PersonController controller;
 
@@ -44,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listaVip = preferences.edit();
 
         controller = new PersonController();
 
@@ -95,12 +102,19 @@ public class MainActivity extends AppCompatActivity {
             person.setSurname(editSurname.getText().toString());
             person.setCurse(editCurse.getText().toString());
             person.setTell(editTell.getText().toString());
-            Toast.makeText(MainActivity.this, "Salvo com sucesso " +person.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Salvo com sucesso " + person.toString(), Toast.LENGTH_LONG).show();
             Toast.makeText(MainActivity.this, "Salvo com sucesso " + person.toString(), Toast.LENGTH_LONG).show();
             editFirstName.setText("");
             editSurname.setText("");
             editCurse.setText("");
             editTell.setText("");
+
+            listaVip.putString("primeiroNome", person.getFirstName());
+            listaVip.putString("surname", person.getSurname());
+            listaVip.putString("curse", person.getCurse());
+            listaVip.putString("tell", person.getTell());
+            listaVip.apply();
+
             controller.save(person);
         });
 
