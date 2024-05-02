@@ -10,10 +10,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 import devandroid.arthursilvio.applistacurso.R;
 import devandroid.arthursilvio.applistacurso.controller.PersonController;
+import devandroid.arthursilvio.applistacurso.model.Course;
 import devandroid.arthursilvio.applistacurso.model.Person;
+import devandroid.arthursilvio.applistacurso.controller.courseController;
 public class MainActivity extends AppCompatActivity {
+
+    courseController courseController;
+    List<Course> listCourses;
     PersonController controller;
     EditText editFirstName;
     EditText editSurname;
@@ -23,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonSave;
     Button buttonFinish;
     Person person;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
         person = new Person();
         controller.search(person);
+
+        courseController = new courseController();
+        listCourses = courseController.getListCourses();
+
 
         editFirstName = findViewById(R.id.editFirstName);
         editSurname = findViewById(R.id.editSurname);
