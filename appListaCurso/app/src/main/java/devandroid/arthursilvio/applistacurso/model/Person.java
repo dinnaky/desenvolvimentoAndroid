@@ -1,8 +1,9 @@
 package devandroid.arthursilvio.applistacurso.model;
 
-//Classe
+//Class
 public class Person {
-    //metodos - getts and setts
+
+    //gets and setts
     public String getFirstName() {
         return firstName;
     }
@@ -35,25 +36,14 @@ public class Person {
         this.tell = tell;
     }
 
-    //atributs
+    //attributes
     private String firstName;
     private String surname;
     private String curse;
     private String tell;
 
-    //construtor
+    //constructor
     public Person() {
 
     }
-
-    //to string - Para Textos (OBJETO PAI)
-    // herança - polimorfismo (varias formas)
-//    @Override
-//    public String toString() {
-//        return "Seus dados:" +
-//                " Primeiro Nome: '" + firstName + '\'' +
-//                ", Sobrenome: '" + surname + '\'' +
-//                ", Curso: '" + curse + '\'' +
-//                ", Telefone: '" + tell + '\'' +
-//                '}';
 }

@@ -16,26 +16,21 @@ import devandroid.arthursilvio.applistacurso.R;
 import devandroid.arthursilvio.applistacurso.controller.PersonController;
 import devandroid.arthursilvio.applistacurso.model.Person;
 
-public class MainActivity extends AppCompatActivity {
 
-    //Declarando Classes
+// Declaring variables
+public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
     public static final String NOME_PREFERENCES = "pref_listavip";
 
     PersonController controller;
-
     EditText editFirstName;
     EditText editSurname;
     EditText editCurse;
     EditText editTell;
-
     Button buttonClean;
     Button buttonSave;
     Button buttonFinish;
-
-
-    Person outerPerson;
     Person person;
 
     @Override
@@ -48,27 +43,19 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+      
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
         SharedPreferences.Editor listaVip = preferences.edit();
-
         controller = new PersonController();
-
-        //MÉTODO SETTS
-
+        //SETTS
         person = new Person();
-//        person.setFirstName("Arthur");
-//        person.setSurname("Vitor");
-//        person.setCurse("A.D.S");
-//        person.setTell("(44)99999-9999");
-        outerPerson = new Person();
-        outerPerson.setFirstName("Lucas");
-        outerPerson.setSurname("Wills");
-        outerPerson.setCurse("Agro");
-        outerPerson.setTell("(11)11111-1111");
+        person.setFirstName("Arthur");
+        person.setSurname("Vitor");
+        person.setCurse("A.D.S");
+        person.setTell("(44)99999-9999");
 
 
-// ASSOCIAR JAVA AO LAYOUT USANDO FINDVIEWBYID
+// ASSOCIATE JAVA WITH THE LAYOUT USING FINDVIEWBYID
         editFirstName = findViewById(R.id.editFirstName);
         editSurname = findViewById(R.id.editSurname);
         editCurse = findViewById(R.id.editCurse);
@@ -78,25 +65,28 @@ public class MainActivity extends AppCompatActivity {
         buttonSave = findViewById(R.id.buttonSave);
         buttonFinish = findViewById(R.id.buttonFinish);
 
-        editFirstName.setText(outerPerson.getFirstName());
-        editSurname.setText(outerPerson.getSurname());
-        editCurse.setText(outerPerson.getCurse());
-        editTell.setText(outerPerson.getTell());
-// AQUI ADICIONEI UM LISTENER DE CLICK NO BOTÃO LIMPAR.
+        editFirstName.setText(person.getFirstName());
+        editSurname.setText(person.getSurname());
+        editCurse.setText(person.getCurse());
+        editTell.setText(person.getTell());
+
+// HERE I ADDED A CLICK LISTENER ON THE CLEAR BUTTON.
         buttonClean.setOnClickListener(v -> {
             editFirstName.setText("");
             editSurname.setText("");
             editCurse.setText("");
             editTell.setText("");
         });
-// AQUI ADICIONEI UM LISTENER DE CLICK NO BOTÃO FINALIZAR.
+
+// HERE I ADDED A CLICK LISTENER ON THE FINISH BUTTON.
         buttonFinish.setOnClickListener(v -> {
-            //TOAST = EXIBI UMA MENSAGEM NA TELA
+            //TOAST = DISPLAY A MESSAGE ON THE SCREEN
             Toast.makeText(MainActivity.this, "Sucesso ao mandar as informações", Toast.LENGTH_LONG).show();
-            //SHOTDOWN NO APLICATIVO
+            //SHUTDOWN IN THE APP
             finish();
         });
-// AQUI ADICIONEI UM LISTENER DE CLICK NO BOTÃO SALVAR.
+
+// HERE I ADDED A LISTENER BY CLICKING THE SAVE BUTTON.
         buttonSave.setOnClickListener(v -> {
             person.setFirstName(editFirstName.getText().toString());
             person.setSurname(editSurname.getText().toString());
@@ -108,36 +98,14 @@ public class MainActivity extends AppCompatActivity {
             editSurname.setText("");
             editCurse.setText("");
             editTell.setText("");
-
+          
             listaVip.putString("primeiroNome", person.getFirstName());
             listaVip.putString("surname", person.getSurname());
             listaVip.putString("curse", person.getCurse());
             listaVip.putString("tell", person.getTell());
             listaVip.apply();
-
+            controller = new PersonController();
             controller.save(person);
         });
-
-// Maneira mais fácil de concatenar
-/*        Log.i("POOAndroid", "Dados adquiridos: " +person.toString());
-        Log.i("POOAndroid", "Dados adquiridos: " +outerPerson.toString());*/
-// MÉTODO GETTS (concatenação)
-/*
-        String personalData;
-
-        personalData = "Primeiro Nome: ";
-        personalData += person.getFirstName();
-        personalData += ".";
-        personalData += " Sobrenome: ";
-        personalData += person.getSurname();
-        personalData += ".";
-        personalData += " Curso: ";
-        personalData += person.getCurse();
-        personalData += ".";
-        personalData += " Telefone: ";
-        personalData += person.getTell();
-        personalData += ".";
-*/
-
     }
 }
