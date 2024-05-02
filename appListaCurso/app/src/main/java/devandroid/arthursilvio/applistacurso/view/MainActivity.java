@@ -1,5 +1,6 @@
 package devandroid.arthursilvio.applistacurso.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,9 @@ import devandroid.arthursilvio.applistacurso.model.Person;
 
 // Declaring variables
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_listavip";
 
     PersonController controller;
     EditText editFirstName;
@@ -39,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+      
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listaVip = preferences.edit();
+        controller = new PersonController();
         //SETTS
         person = new Person();
         person.setFirstName("Arthur");
@@ -91,7 +98,12 @@ public class MainActivity extends AppCompatActivity {
             editSurname.setText("");
             editCurse.setText("");
             editTell.setText("");
-
+          
+            listaVip.putString("primeiroNome", person.getFirstName());
+            listaVip.putString("surname", person.getSurname());
+            listaVip.putString("curse", person.getCurse());
+            listaVip.putString("tell", person.getTell());
+            listaVip.apply();
             controller = new PersonController();
             controller.save(person);
         });
