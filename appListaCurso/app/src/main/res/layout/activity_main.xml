@@ -31,7 +31,7 @@
         android:hint="@string/txt_hint_edit_first_name"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:textColorHint="#795548"
+        android:textColorHint="@color/text_colorBlack"
         app:layout_constraintTop_toBottomOf="@+id/txtTitle"
         tools:ignore="VisualLintTextFieldSize"
         tools:layout_editor_absoluteX="17dp" />
@@ -46,7 +46,7 @@
         android:hint="@string/txt_hint_edit_surname"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:textColorHint="#795548"
+        android:textColorHint="@color/text_colorBlack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         android:hint="@string/txt_hint_edit_course"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:textColorHint="#795548"
+        android:textColorHint="@color/text_colorBlack"
         app:layout_constraintTop_toBottomOf="@+id/editSurname"
         tools:ignore="VisualLintTextFieldSize"
         tools:layout_editor_absoluteX="16dp" />
@@ -78,10 +78,39 @@
         android:hint="@string/txt_hint_edit_tell"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:textColorHint="#795548"
+        android:textColorHint="@color/text_colorBlack"
         app:layout_constraintTop_toBottomOf="@+id/editCourse"
         tools:ignore="VisualLintTextFieldSize"
         tools:layout_editor_absoluteX="17dp" />
+
+    <TextView
+        android:id="@+id/txtListSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/txtSelectCourse"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonClean"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTell"
+        app:layout_constraintVertical_bias="0.515"
+        tools:ignore="VisualLintBounds" />
 
     <Button
         android:id="@+id/buttonClean"
@@ -123,31 +152,5 @@
         app:layout_constraintTop_toBottomOf="@+id/editTell"
         app:layout_constraintVertical_bias="0.84"
         tools:ignore="VisualLintButtonSize" />
-
-    <TextView
-        android:id="@+id/txtListSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="Selecione o curso:"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonClean"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTell"
-        app:layout_constraintVertical_bias="0.515" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
