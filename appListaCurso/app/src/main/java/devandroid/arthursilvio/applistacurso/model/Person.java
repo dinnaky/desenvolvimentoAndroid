@@ -20,12 +20,12 @@ public class Person {
         this.surname = surname;
     }
 
-    public String getCurse() {
-        return curse;
+    public String getCourse() {
+        return course;
     }
 
-    public void setCurse(String curse) {
-        this.curse = curse;
+    public void setCourse(String curse) {
+        this.course = curse;
     }
 
     public String getTell() {
@@ -39,7 +39,7 @@ public class Person {
     //attributes
     private String firstName;
     private String surname;
-    private String curse;
+    private String course;
     private String tell;
 
     //constructor
