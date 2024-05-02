@@ -29,6 +29,7 @@ public class PersonController {
         person.setSurname(preferences.getString("surname", ""));
         person.setCourse(preferences.getString("course", ""));
         person.setTell(preferences.getString("tell", ""));
+
         return person;
     }
 
