@@ -1,6 +1,4 @@
 package devandroid.arthursilvio.applistacurso.view;
-
-import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences preferences;
     public static final String NOME_PREFERENCES = "pref_listavip";
 
+    SharedPreferences.Editor listaVip;
     PersonController controller;
     EditText editFirstName;
     EditText editSurname;
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     Button buttonFinish;
     Person person;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaVip = preferences.edit();
+
+        listaVip = preferences.edit();
         controller = new PersonController();
 
 
@@ -73,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
             editSurname.setText("");
             editCourse.setText("");
             editTell.setText("");
+
+            listaVip.clear();
+            listaVip.apply();
+
         });
 
         buttonFinish.setOnClickListener(v -> {
