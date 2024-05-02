@@ -15,11 +15,6 @@ import devandroid.arthursilvio.applistacurso.R;
 import devandroid.arthursilvio.applistacurso.controller.PersonController;
 import devandroid.arthursilvio.applistacurso.model.Person;
 public class MainActivity extends AppCompatActivity {
-
-    SharedPreferences preferences;
-    public static final String NOME_PREFERENCES = "pref_listavip";
-
-    SharedPreferences.Editor listaVip;
     PersonController controller;
     EditText editFirstName;
     EditText editSurname;
@@ -41,17 +36,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-
-        listaVip = preferences.edit();
-        controller = new PersonController();
-
+        controller = new PersonController(MainActivity.this);
 
         person = new Person();
-        person.setFirstName(preferences.getString("firstName", ""));
-        person.setSurname(preferences.getString("surname", ""));
-        person.setCourse(preferences.getString("course", ""));
-        person.setTell(preferences.getString("tell", ""));
+        controller.search(person);
 
         editFirstName = findViewById(R.id.editFirstName);
         editSurname = findViewById(R.id.editSurname);
@@ -72,10 +60,7 @@ public class MainActivity extends AppCompatActivity {
             editSurname.setText("");
             editCourse.setText("");
             editTell.setText("");
-
-            listaVip.clear();
-            listaVip.apply();
-
+            controller.clean();
         });
 
         buttonFinish.setOnClickListener(v -> {
@@ -94,14 +79,8 @@ public class MainActivity extends AppCompatActivity {
             editSurname.setText("");
             editCourse.setText("");
             editTell.setText("");
-          
-            listaVip.putString("firstName", person.getFirstName());
-            listaVip.putString("surname", person.getSurname());
-            listaVip.putString("course", person.getCourse());
-            listaVip.putString("tell", person.getTell());
-            listaVip.apply();
 
-            controller = new PersonController();
+            controller = new PersonController(MainActivity.this);
             controller.save(person);
         });
     }
