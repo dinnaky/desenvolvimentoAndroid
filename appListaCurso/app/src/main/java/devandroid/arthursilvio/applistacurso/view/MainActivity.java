@@ -1,4 +1,5 @@
 package devandroid.arthursilvio.applistacurso.view;
+
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import devandroid.arthursilvio.applistacurso.R;
 import devandroid.arthursilvio.applistacurso.controller.PersonController;
 import devandroid.arthursilvio.applistacurso.model.Person;
 import devandroid.arthursilvio.applistacurso.controller.courseController;
+
 public class MainActivity extends AppCompatActivity {
 
     courseController courseController;

@@ -118,27 +118,27 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/buttonClean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="32dp"
                     android:background="@color/corButton"
-                    android:text="@string/txt_button_clean"
-                    android:layout_margin="16dp"/>
+                    android:text="@string/txt_button_clean" />
 
                 <Button
                     android:id="@+id/buttonSave"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
                     android:layout_marginBottom="32dp"
                     android:background="@color/corButton"
-                    android:text="@string/txt_button_save"
-                    android:layout_margin="16dp"/>
+                    android:text="@string/txt_button_save" />
 
             </LinearLayout>
 
@@ -154,5 +154,4 @@
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.appcompat.widget.LinearLayoutCompat>

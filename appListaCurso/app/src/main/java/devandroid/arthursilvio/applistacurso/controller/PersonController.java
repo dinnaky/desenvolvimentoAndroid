@@ -19,12 +19,12 @@ public class PersonController {
         listVip.apply();
     }
 
-    public PersonController(MainActivity mainActivity){
+    public PersonController(MainActivity mainActivity) {
         preferences = mainActivity.getSharedPreferences(NOME_PREFERENCES, 0);
         listVip = preferences.edit();
     }
 
-    public Person search(Person person){
+    public Person search(Person person) {
         person.setFirstName(preferences.getString("firstName", ""));
         person.setSurname(preferences.getString("surname", ""));
         person.setCourse(preferences.getString("course", ""));
@@ -33,7 +33,7 @@ public class PersonController {
         return person;
     }
 
-    public void clean (){
+    public void clean() {
         listVip.clear();
         listVip.apply();
 
